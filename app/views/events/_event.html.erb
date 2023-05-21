@@ -1,10 +1,10 @@
-<div class="col-sm-6 col-md-4">
-  <div class="thumbnail">
+<div class="col-sm-6 col-md-4" style="display: flex;">
+  <div class="thumbnail" style="position: relative; display: flex;">
 
-    <%= content_tag 'div', '', class: 'event-background',
+    <%= content_tag 'div', '', class: 'event-background rounded',
       style: "background-image: url(#{asset_path('event_thumb.jpg')})" %>
 
-    <div class="thumbnail-inner event-info-inner">
+    <div class="thumbnail-inner event-info-inner text-center rounded">
       <div class="caption">
         <div class="event-description">
           <h3><%= link_to event.title, event_path(event) %></h3>
