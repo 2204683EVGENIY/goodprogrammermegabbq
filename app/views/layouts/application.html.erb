@@ -13,7 +13,16 @@
   <body>
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
-        <p class="fs-1"><%= link_to "BBQ!", root_path %></p>
+        <%= link_to "BBQ!", root_path, class: "navbar-brand" %>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <% if user_signed_in? %>
+            <%= button_to "Профиль", current_user, method: :get, class: "btn btn-outline-primary", type: "button" %>
+            <%= button_to "Выйти", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger",  type: "button" %>
+          <% else %>
+            <%= button_to "Войти", new_user_session_path, class: "btn btn-outline-primary", type: "button" %>
+            <%= button_to "Зарегистрироваться", new_user_registration_path, method: :get, class: "btn btn-outline-success", type: "button" %>
+          <% end %>
+        </div>
       </div>
     </div>
 
