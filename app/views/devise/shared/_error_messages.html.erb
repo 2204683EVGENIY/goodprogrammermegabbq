@@ -1,0 +1,16 @@
+<% if resource.errors.any? %>
+  <div class="alert alert-danger">
+    <div class="lead buffer-bottom">
+      В вашей форме <%= resource.errors.count %> ошибок
+    </div>
+
+    <ul class="mt-4">
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <div class="position-absolute top-0 end-0">
+      <button type="button" class="btn-close btn-outline-secondary" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+  </div>
+<% end %>
