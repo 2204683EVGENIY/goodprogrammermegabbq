@@ -2,7 +2,6 @@
 # exit on error
 set -o errexit
 
-unset PORT && bin/rails server
 bundle install
 yarn install
 yarn build
