@@ -21,23 +21,27 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-     redirect_to @event, notice: 'Event was successfully created.'
+      redirect_to @event, notice: 'Событие создано, все гут.'
     else
+      flash.now[:alert] = "Хммм... Чего - то не хватает..."
+
       render :new
     end
   end
 
   def update
     if @event.update(event_params)
-      redirect_to @event, notice: "Event was successfully updated."
+      redirect_to @event, notice: "Изменения в силе!"
     else
-      render :edit, status: :unprocessable_entity
+      flash.now[:alert] = "Хммм... Чето - то убыло..."
+
+      render :edit
     end
   end
 
   def destroy
     @event.destroy
-    redirect_to events_url, notice: "Event was successfully destroyed."
+    redirect_to events_url, notice: "Событие взорвано!"
   end
 
   private
