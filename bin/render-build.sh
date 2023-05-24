@@ -6,5 +6,5 @@ bundle install
 yarn install
 yarn build
 yarn build:css
-bundle exec rake db:migrate
-bundle exec rake assets:precompile
+bundle exec rails db:migrate
+bundle exec rails assets:precompile
