@@ -23,8 +23,6 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to @event, notice: I18n.t("controllers.events.created")
     else
-      flash.now[:alert] = "Хммм... Чего - то не хватает..."
-
       render :new
     end
   end
@@ -33,8 +31,6 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       redirect_to @event, notice: I18n.t("controllers.events.updated")
     else
-      flash.now[:alert] = "Хммм... Чето - то убыло..."
-
       render :edit
     end
   end
