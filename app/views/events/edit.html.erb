@@ -5,3 +5,5 @@
     <%= render "form" %>
   </div>
 </div>
+
+<%= button_to "Удалить событие", event_path(@event), method: :delete, data: { confirm: "Вы уверены?", turbo_confirm: "Вы уверены?" },  class: "btn btn-danger mt-3 lm-3" %>
