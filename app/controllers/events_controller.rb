@@ -21,7 +21,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-      redirect_to @event, notice: 'Событие создано, все гут.'
+      redirect_to @event, notice: I18n.t("controllers.events.created")
     else
       flash.now[:alert] = "Хммм... Чего - то не хватает..."
 
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to @event, notice: "Изменения в силе!"
+      redirect_to @event, notice: I18n.t("controllers.events.updated")
     else
       flash.now[:alert] = "Хммм... Чето - то убыло..."
 
@@ -41,7 +41,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to events_url, notice: "Событие взорвано!"
+    redirect_to events_url, notice: I18n.t("controllers.events.destroyed")
   end
 
   private
