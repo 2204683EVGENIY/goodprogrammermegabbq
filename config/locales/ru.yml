@@ -28,7 +28,11 @@ ru:
     users:
       updated: "Вы обновили свой профиль"
       comrad: "Товарищ №"
-
+    comments:
+      destroyed: "Комментарий удален"
+      created: "Ваш комментарий добавлен"
+      error: "Ошибка с комментарием"
+      
   app:
     name: "Шашлыки"
     company: "Хороший программист"
@@ -93,3 +97,6 @@ ru:
     edit_profile: "Редактировать профиль"
     change_password: "Сменить пароль"
     or: "или"
+  comments:
+    comment:
+    destroy_confirm: "Вы уверены, что хотите удалить этот комментарий?"

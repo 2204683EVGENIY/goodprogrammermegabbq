@@ -1,0 +1,7 @@
+<%= form_with(model: comment) do |form| %>
+  <%= render partial: "partials/form_errors", locals: { model: comment } %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
