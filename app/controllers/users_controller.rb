@@ -13,8 +13,6 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to @user, notice: I18n.t("controllers.users.updated")
     else
-      flash.now[:alert] = "Ошибка при попытке обновить данные!"
-
       render :edit
     end
   end

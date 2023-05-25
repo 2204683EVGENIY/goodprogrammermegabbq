@@ -6,7 +6,7 @@
   <% if @user == current_user%>
     <div class="row">
       <div class="col-md-12">
-        <%= button_to "Редактировать профиль", edit_user_path(@user), method: :get, class: "btn btn-primary mt-3 mb-3" %>
+        <%= button_to t("link.edit_profile"), edit_user_path(@user), method: :get, class: "btn btn-primary mt-3 mb-3" %>
       </div>
     </div>
   <% end %>
@@ -14,12 +14,12 @@
   <div class="row">
     <div class="col-md-12">
       <% if @user.events.any? %>
-        <h3>Организовал:</h3>
+        <h3><%= t("users.user.events") %></h3>
         <div class="row">
           <%= render partial: 'events/event', collection: @user.events %>
         </div>
       <% else %>
-        <p class="buffer-top">Пользователь пока не организовал ни одного события</p>
+        <p class="buffer-top"><%= t("users.user.no_events") %></p>
       <% end %>
     </div>
   </div>

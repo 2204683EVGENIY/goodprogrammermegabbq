@@ -6,18 +6,19 @@ ru:
       user: "Пользователь"
       event: "Событие"
 
-    # Перевод атрибутов моделей
-    attributes:
-      user:
-        email: "Email"
-        name: "Имя"
-        password: "Пароль"
-        password_confirmation: "Подтверждение пароля"
-      event:
-        title: "Название"
-        address: "Место проведения"
-        datetime: "Дата и время"
-        description: "Описание"
+  # Перевод атрибутов моделей
+  attributes:
+    user:
+      email: "Email"
+      name: "Имя"
+      password: "Пароль"
+      password_confirmation: "Подтверждение пароля"
+    event:
+      title: "Название"
+      address: "Место проведения"
+      datetime: "Дата и время"
+      description: "Описание"
+
   # Перевод сообщений, которые отправляет контроллер
   controllers:
     events:
@@ -26,11 +27,69 @@ ru:
       destroyed: "Вы удалили мероприятие :("
     users:
       updated: "Вы обновили свой профиль"
+      comrad: "Товарищ №"
+
   app:
     name: "Шашлыки"
     company: "Хороший программист"
+
   plural:
     error:
       one: "В вашей форме %{count} ошибка"
       few: "В вашей форме %{count} ошибки"
       many: "В вашей форме %{count} ошибок"
+
+  users:
+    user:
+      destroy_confirm: "Это действие отправит Ваш аккаунт туда - куда уходят все удаленные программы, продолжть?"
+      edit: "Редактирование профиля"
+      events: "Организовал:"
+      no_events: "Пользователь пока не организовал ни одного события"
+
+  events:
+    all: "События"
+    event:
+      new: "Новое событие"
+      edit: "Редактирование события"
+      destroy_confirm: "Точно далить событие, жалеть не будете?"
+
+  devise:
+    passwords:
+      new: "Забыли пароль?"
+      live: "Старый пароль"
+      edit: "Смена пароля"
+      new_password: "Новый пароль"
+      new_password_confirmation: "Подтверждение нового пароля"
+
+  registrations:
+    edit: "Смена пароля"
+    need_to_confirm: "Введите текущий пароль для подтверждения"
+    new: "Регистрация"
+    email_protected: "Мы не передаем личные данные третьим лицам... почти"
+    password_too_short: "Пароль должен состоять хотя бы из шести символов"
+    placeholder_email: "name@example.com"
+    placeholder_password: "******"
+
+  sessions:
+    new: "Вход"
+
+  button:
+    password_reset: "Отправить инструкцию по сбросу пароля"
+    change_password: "Сменить пароль"
+    update: "Обновить"
+    delete_account: "Удалить аккаунт"
+    registration: "Регистрация"
+    sign_in: "Войти"
+    sign_out: "Выйти"
+    profile: "Профиль"
+    save: "Сохранить"
+    destroy_event: "Удалить событие"
+
+  link:
+    back: "вернуться"
+    main: "на главную"
+    create_event: "Создать событие"
+    edit_event: "Изменить"
+    edit_profile: "Редактировать профиль"
+    change_password: "Сменить пароль"
+    or: "или"

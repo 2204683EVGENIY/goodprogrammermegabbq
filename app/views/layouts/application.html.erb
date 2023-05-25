@@ -16,12 +16,12 @@
         <%= link_to t("app.name"), root_path, class: "display-4" %>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           <% if user_signed_in? %>
-            <%= button_to "Создать событие", new_event_path, method: :get, class: 'btn btn-success' %>
-            <%= button_to "Профиль", current_user, method: :get, class: "btn btn-outline-primary", type: "button" %>
-            <%= button_to "Выйти", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger",  type: "button" %>
+            <%= button_to t("events.event.new"), new_event_path, method: :get, class: 'btn btn-success' %>
+            <%= button_to t("button.profile"), current_user, method: :get, class: "btn btn-outline-primary", type: "button" %>
+            <%= button_to t("button.sign_out"), destroy_user_session_path, method: :delete, class: "btn btn-outline-danger",  type: "button" %>
           <% else %>
-            <%= button_to "Войти", new_user_session_path, class: "btn btn-outline-primary", type: "button" %>
-            <%= button_to "Зарегистрироваться", new_user_registration_path, method: :get, class: "btn btn-outline-success", type: "button" %>
+            <%= button_to t("button.sign_in"), new_user_session_path, class: "btn btn-outline-primary", type: "button" %>
+            <%= button_to t("button.registration"), new_user_registration_path, method: :get, class: "btn btn-outline-success", type: "button" %>
           <% end %>
         </div>
       </div>
