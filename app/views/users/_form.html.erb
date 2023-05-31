@@ -1,19 +1,25 @@
-<%= form_with model: @user, html: { multipart: true }, data: {turbo: false} do |form| %>
-  
-  <%= render partial: "partials/form_errors", locals: { model: @user } %>
+<div class="col-lg-9">
+  <%= form_with model: @user, html: { multipart: true }, data: { turbo: false } do |form| %>
+    
+    <%= render partial: "partials/form_errors", locals: { model: @user } %>
 
-  <div class="form-group mt-3">
-    <%= form.label :name, t("attributes.user.name") %>
-    <%= form.text_field :name, class: "form-control" %>
-  </div>
+    <div class="form-group mt-3">
+      <%= form.label :name, t("attributes.user.name") %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
 
-  <div class="form-group mt-3">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control" %>
-  </div>
+    <div class="form-group mt-3">
+      <%= form.label :email %>
+      <%= form.text_field :email, class: "form-control" %>
+    </div>
 
-  <div class="actions buffer-bottom mt-3">
-    <%= form.submit t("button.save"), class: "btn btn-primary" %>
-    <%= t("link.or") %> <%= link_to t("link.back"), :back %> <%= t("link.or") %> <%= link_to t("button.change_password"), edit_user_registration_path %>
-  </div>
-<% end %>
+    <div class="actions buffer-bottom mt-3">
+      <%= form.submit t("button.save"), class: "btn btn-primary" %>
+      <%= t("link.or") %> <%= link_to t("link.back"), :back %>
+    </div>
+
+    <div class="actions buffer-bottom mt-3">
+      <%= link_to t("button.change_password"), edit_user_registration_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

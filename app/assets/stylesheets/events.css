@@ -44,3 +44,15 @@
   width: 100%;
   height: 400px;
 }
+
+.flx-dspl {
+  display: flex;
+}
+
+.psn-rltv {
+  position: relative;
+}
+
+.wdh-fteen-prc {
+  width: 40vh;
+}
