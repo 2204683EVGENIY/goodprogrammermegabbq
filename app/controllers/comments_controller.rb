@@ -26,7 +26,6 @@ class CommentsController < ApplicationController
     redirect_to @event, message
   end
 
-
   private
     def set_event
       @event = Event.find(params[:event_id])
