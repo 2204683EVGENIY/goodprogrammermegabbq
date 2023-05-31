@@ -1,19 +1,19 @@
-<%= form_for [@event, comment] do |f| %>
+<%= form_for [@event, comment], data: { turbo: false } do |f| %>
   <%= render partial: "partials/form_errors", locals: { model: comment } %>
 
   <div class="form-group">
-    <%= f.label :body %>
+    <%= f.label :body, t("activerecord.models.comment") %>
     <%= f.text_area :body, class: "form-control" %>
   </div>
 
   <% unless user_signed_in? %>
-    <div class="form-group">
-      <%= f.label :user_name %>
+    <div class="form-group mt-3">
+      <%= f.label :user_name, t("attributes.user.name") %>
       <%= f.text_field :user_name, class: "form-control" %>
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="actions mt-3 mb-3">
     <%= f.submit "Отправить", class: "btn btn-primary" %>
   </div>
 <% end %>

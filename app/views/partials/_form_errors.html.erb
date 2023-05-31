@@ -2,7 +2,6 @@
 <% if errors.any? %>
   <div class="alert alert-danger">
     <%= t("plural.error", count: errors.count) %>:
-
     <ol>
       <% errors.each do |error| %>
         <li><%= error.full_message %></li>

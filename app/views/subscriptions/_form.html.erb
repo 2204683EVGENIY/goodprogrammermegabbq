@@ -1,19 +1,19 @@
-<%= form_for [@event, subscription] do |f| %>
+<%= form_for [@event, subscription], data: { turbo: false } do |f| %>
   <%= render partial: "partials/form_errors", locals: { model: subscription } %>
 
   <% unless user_signed_in? %>
     <div class="form-group">
-      <%= f.label :user_name %>
+      <%= f.label :user_name, t("attributes.user.name") %>
       <%= f.text_field :user_name, class: "form-control" %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :user_email %>
+    <div class="form-group mt-3">
+      <%= f.label :user_email, t("attributes.user.email") %>
       <%= f.text_field :user_email, class: "form-control" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Подписаться", class: "btn btn-primary" %>
+  <div class="actions mt-3">
+    <%= f.submit t("button.subscribe"), class: "btn btn-primary" %>
   </div>
 <% end %>

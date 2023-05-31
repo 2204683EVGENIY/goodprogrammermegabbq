@@ -1,19 +1,24 @@
 <div class="buffer-bottom">
   <p><%= comment.body %></p>
   <p>
-    <span>
+    <div class="col-md-5 psn-rltv text-left">
       <% if comment.user.present? %>
         <%= render partial: "users/user", object: comment.user %>
       <% else %>
         <em><strong><%= comment.user_name %></strong></em>
       <% end %>
-    </span>
-    <em><%= l comment.created_at, format: :short %></em>
-    <% if current_user_can_edit?(comment) %>
-      <%= button_to(
-            fa_icon("trash"), event_comment_path(comment.event, comment),
-            method: :delete, data: { confirm: t(".destroy_confirm") }
-        ) %>
-    <% end %>
+    <div class="text-left"><%= l comment.created_at, format: :short %></div>
+      <% if current_user_can_edit?(comment) %>
+        <%= button_to event_comment_path(comment.event, comment),
+        method: :delete,
+        data: { confirm: t(".destroy_confirm"), 
+        turbo_confirm: t(".destroy_confirm") }, 
+        class: "position-absolute top-50 start-100 translate-middle" do %>
+          <div class="btn btn-outline-danger position-absolute top-0 start-100 translate-middle">
+            <i class="bi bi-x-circle-fill" title="Удалить комментарий"></i>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </p>
 </div>

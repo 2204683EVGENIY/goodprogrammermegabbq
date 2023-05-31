@@ -3,6 +3,7 @@ ru:
     models:
       user: "Пользователь"
       event: "Событие"
+      comment: "Комментарий"
 
   attributes:
     user:
@@ -56,6 +57,9 @@ ru:
       new: "Новое событие"
       edit: "Редактирование события"
       destroy_confirm: "Точно удалить событие, жалеть не будете?"
+      owner: "Организоватор:"
+      guests: "Собираются идти:"
+      subscribe: "Я пойду:"
 
   devise:
     passwords:
@@ -88,6 +92,7 @@ ru:
     profile: "Профиль"
     save: "Сохранить"
     destroy_event: "Удалить событие"
+    subscribe: "Подписаться"
 
   link:
     back: "вернуться"
