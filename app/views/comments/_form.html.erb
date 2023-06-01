@@ -2,13 +2,13 @@
   <%= render partial: "partials/form_errors", locals: { model: comment } %>
 
   <div class="form-group">
-    <%= f.label :body, t("activerecord.models.comment") %>
+    <%= f.label :body, t("activerecord.models.comment"), class: "form-label" %>
     <%= f.text_area :body, class: "form-control" %>
   </div>
 
   <% unless user_signed_in? %>
     <div class="form-group mt-3">
-      <%= f.label :user_name, t("attributes.user.name") %>
+      <%= f.label :user_name, t("attributes.user.name"), class: "form-label" %>
       <%= f.text_field :user_name, class: "form-control" %>
     </div>
   <% end %>

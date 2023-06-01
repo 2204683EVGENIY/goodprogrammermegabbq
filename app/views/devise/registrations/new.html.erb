@@ -5,21 +5,27 @@
     <%= render partial: "partials/form_errors", locals: { model: resource } %>
 
     <div class="form-group mt-3">
-      <%= f.label :email %> <em class="form-text">(<%= t("registrations.email_protected") %>)</em><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t("registrations.placeholder_email") %>
+      <%= f.label :email, class: "form-label" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: t("registrations.placeholder_email") %>
+      <div class="form-text">
+        <%= t("registrations.email_protected") %>
+      </div>
     </div>
 
     <div class="form-group mt-3">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-        <em class="form-text">(<%= t("registrations.password_too_short")%>)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", placeholder: t("registrations.placeholder_password") %>
+      <%= f.label :password, class: "form-label" %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: t("registrations.placeholder_password") %>
+      <div class="form-text">
+        <%= t("registrations.password_too_short") %>
+      </div>
     </div>
 
     <div class="form-group mt-3">
-      <%= f.label :password_confirmation %> <em class="form-text">(<%= t("registrations.need_to_confirm")%>)</em><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t("registrations.placeholder_password") %>
+      <%= f.label :password_confirmation, class: "form-label" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: t("registrations.placeholder_password") %>
+      <div class="form-text">
+        <%= t("registrations.need_to_confirm") %>
+      </div>
     </div>
 
     <div class="actions buffer-bottom mt-3">

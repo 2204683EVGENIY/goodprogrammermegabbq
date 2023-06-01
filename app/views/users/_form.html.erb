@@ -4,12 +4,12 @@
     <%= render partial: "partials/form_errors", locals: { model: @user } %>
 
     <div class="form-group mt-3">
-      <%= form.label :name, t("attributes.user.name") %>
+      <%= form.label :name, t("attributes.user.name"), class: "form-label" %>
       <%= form.text_field :name, class: "form-control" %>
     </div>
 
     <div class="form-group mt-3">
-      <%= form.label :email %>
+      <%= form.label :email, class: "form-label" %>
       <%= form.text_field :email, class: "form-control" %>
     </div>
 

@@ -5,8 +5,8 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="form-group mt-3">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.label :email, class: "form-label" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -14,18 +14,27 @@
     <% end %>
 
     <div class="form-group mt-3">
-      <%= f.label :password %> <em class="form-text">(<%= t("devise.passwords.new_password") %>)</em><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.label :password, class: "form-label" %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+      <div class="form-text">
+        <%= t("devise.passwords.new_password") %>
+      </div>
     </div>
 
     <div class="form-group mt-3">
-      <%= f.label :password_confirmation %> <em class="form-text">(<%= t("devise.passwords.new_password_confirmation") %>)</em><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.label :password_confirmation, class: "form-label" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+      <div class="form-text">
+        <%= t("devise.passwords.new_password_confirmation") %>
+      </div>
     </div>
 
     <div class="form-group mt-3">
-      <%= f.label :current_password %> <em class="form-text">(<%= t("devise.passwords.live") %>)</em><br />
-      <%= f.password_field :current_password, autocomplete: "current-password" %>
+      <%= f.label :current_password, class: "form-label" %>
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+      <div class="form-text">
+        <%= t("devise.passwords.live") %>
+      </div>
     </div>
 
     <div class="actions buffer-bottom mt-3">
