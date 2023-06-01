@@ -6,13 +6,13 @@
   <% end %>
   <% if current_user_can_edit?(subscription) %>
     <%= button_to event_subscription_path(subscription.event, subscription),
-      method: :delete,
-      data: { confirm: t("subscriptions.subscription.destroy_confirm"), 
-      turbo_confirm: t("subscriptions.subscription.destroy_confirm") }, 
-      class: "position-absolute top-50 start-100 translate-middle" do %>
-        <div class="btn btn-outline-danger position-absolute top-0 start-100 translate-middle">
-          <i class="bi bi-x-circle-fill" title="Удалить подписчика"></i>
-        </div>
-      <% end %>
+    method: :delete,
+    data: { confirm: t("subscriptions.subscription.destroy_confirm"), 
+    turbo_confirm: t("subscriptions.subscription.destroy_confirm") }, 
+    class: "position-absolute top-50 start-100 translate-middle" do %>
+      <div class="btn btn-outline-danger position-absolute top-0 start-100 translate-middle">
+        <i class="bi bi-x-circle-fill"></i>
+      </div>
+    <% end %>
   <% end %>
 </div>

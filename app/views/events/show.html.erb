@@ -29,7 +29,7 @@
   <div class="col-md-8">
     <div class="event-comments buffer-top">
       <%= render partial: "comments/form",
-        locals: {comment: @new_comment || @event.comments.build} %>
+        locals: { comment: @new_comment || @event.comments.build } %>
       <div class="buffer-both">
         <%= render partial: "comments/comment",
           collection: @event.comments.except(@new_comment) %>

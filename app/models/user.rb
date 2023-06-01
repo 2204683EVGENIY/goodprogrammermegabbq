@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 35 }
 
   before_validation :set_name, on: :create
+  before_validation :downcase_email
 
   after_commit :link_subscriptions, on: :create
 
@@ -20,5 +21,9 @@ class User < ApplicationRecord
 
   def link_subscriptions
     Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
+  end
+
+  def downcase_email
+    email&.downcase!
   end
 end
