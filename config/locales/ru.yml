@@ -33,6 +33,10 @@ ru:
       created: "Вы подписаны на это событие"
       destroyed: "Участник отписан"
       error: "Подписка/отписка не сработала"
+
+  errors:
+    models:
+      subserror: "Это ваше событие"
       
   app:
     name: "Шашлыки"
@@ -85,6 +89,7 @@ ru:
     password_reset: "Отправить инструкцию по сбросу пароля"
     change_password: "Сменить пароль"
     update: "Обновить"
+    comment: "Оставить комментарий"
     delete_account: "Удалить аккаунт"
     registration: "Регистрация"
     sign_in: "Войти"
