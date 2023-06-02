@@ -1,7 +1,7 @@
 <%= form_for [@event, comment], data: { turbo: false } do |f| %>
   <%= render partial: "partials/form_errors", locals: { model: comment } %>
 
-  <div class="form-group">
+  <div class="form-group mt-3">
     <%= f.label :body, t("activerecord.models.comment"), class: "form-label" %>
     <%= f.text_area :body, class: "form-control" %>
   </div>

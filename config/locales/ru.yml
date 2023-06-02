@@ -1,14 +1,23 @@
 ru:
   activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_id:
+              subserror: "Это ваше событие, зачем на него подписываться? :-)"
+              
     models:
       user: "Пользователь"
       event: "Событие"
       comment: "Комментарий"
+      photo: "Фото"
 
   attributes:
     user:
       email: "Email"
       name: "Имя"
+      avatar: "Аватар"
       password: "Пароль"
       password_confirmation: "Подтверждение пароля"
     event:
@@ -22,6 +31,10 @@ ru:
       created: "Вы создали новое мероприятие"
       updated: "Вы обновили мероприятие"
       destroyed: "Вы удалили мероприятие :("
+    photos:
+      error: "Что-то не так с фоткой"
+      created: "Вы добавили фотографию к событию"
+      destroyed: "Вы удалили фотку"
     users:
       updated: "Вы обновили свой профиль"
       comrad: "Товарищ №"
@@ -35,8 +48,7 @@ ru:
       error: "Подписка/отписка не сработала"
 
   errors:
-    models:
-      subserror: "Это ваше событие"
+    subserror: "Это ваше событие, зачем на него подписываться? :-)"
       
   app:
     name: "Шашлыки"
@@ -61,7 +73,7 @@ ru:
       new: "Новое событие"
       edit: "Редактирование события"
       destroy_confirm: "Точно удалить событие, жалеть не будете?"
-      owner: "Организоватор:"
+      owner: "Организатор:"
       guests: "Собираются идти:"
       subscribe: "Я пойду:"
 

@@ -58,5 +58,10 @@
 }
 
 .sz-small {
-  max-width: 50px;
+  margin-top: -2px;
+  height: 20px;
+}
+
+.height {
+  max-height: 70px;
 }
