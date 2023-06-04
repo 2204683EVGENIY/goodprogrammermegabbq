@@ -5,9 +5,8 @@ class Subscription < ApplicationRecord
   before_validation :downcase_email
 
   with_options if: -> { user.present? } do
-    validates :user, uniqueness: {scope: :event_id}
     validates :user_id, uniqueness: { scope: :event_id }
-    validate :user_is_event_maker
+    validate :user_id_uniq
   end
 
   with_options unless: -> { user.present? } do
@@ -16,7 +15,7 @@ class Subscription < ApplicationRecord
               presence: true,
               format: { with: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/ },
               uniqueness: { scope: :event_id }
-    validate :email_match
+    validate :email_exists
   end
 
   def user_email
@@ -41,15 +40,15 @@ class Subscription < ApplicationRecord
     user_email&.downcase!
   end
 
-  def email_match
+  def email_exists
     if User.exists?(email: user_email)
       errors.add(:user_email, :taken)
     end
   end
 
-  def user_is_event_maker
+  def user_id_uniq
     if user_id == event.user.id
-      errors.add(:user_id, :subserror)
+      errors.add(:user_id, :subscription_error)
     end
   end
 end
