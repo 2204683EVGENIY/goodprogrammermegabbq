@@ -7,9 +7,7 @@ class Comment < ApplicationRecord
 
   def user_name
     if user.present?
-      user.name
-    else
-      super
+      user&.name || super
     end
   end
 end

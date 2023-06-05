@@ -5,7 +5,7 @@ ru:
         subscription:
           attributes:
             user_id:
-              subscription_error: "Это ваше событие, зачем на него подписываться? :-)"
+              unable_self_event_subscription: "Это ваше событие, зачем на него подписываться? :-)"
 
     models:
       user: "Пользователь"
