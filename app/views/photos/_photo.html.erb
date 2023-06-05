@@ -1,6 +1,11 @@
-<div class="col-md-3 text-center mb-3 psn-rltv">
+<div class="col-md-3 text-center mb-3 mt-3 psn-rltv">
   <%= link_to image_tag(photo.photo.thumb.url, class: "rounded-pill border border-1 border border-primary height"), photo.photo.url %>
-  <div>
+  <%= button_to event_photo_path(photo.event, photo),
+  method: :delete,
+  data: { confirm: t("controllers.photos.destroy_confirm"), 
+  turbo_confirm: t("controllers.photos.destroy_confirm") },
+  class: "btn position-absolute top-0 start-100 translate-middle
+  bi bi-x-circle-fill" do %>
+  <% end %>
 	<%= render partial: "users/user", object: photo.user %>
-  </div>
 </div>

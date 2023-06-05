@@ -21,6 +21,7 @@ ru:
         avatar: "Аватар"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+
       event:
         title: "Название"
         address: "Место проведения"
@@ -33,17 +34,22 @@ ru:
       created: "Вы создали новое мероприятие"
       updated: "Вы обновили мероприятие"
       destroyed: "Вы удалили мероприятие :("
+
     photos:
       error: "Что-то не так с фоткой"
       created: "Вы добавили фотографию к событию"
       destroyed: "Вы удалили фотку"
+      destroy_confirm: "Вы уверены что стоит удалить это фото?"
+
     users:
       updated: "Вы обновили свой профиль"
       comrad: "Товарищ №"
+
     comments:
       destroyed: "Комментарий удален"
       created: "Ваш комментарий добавлен"
       error: "Ошибка с комментарием"
+
     subscriptions:
       created: "Вы подписаны на это событие"
       destroyed: "Участник отписан"
@@ -144,6 +150,13 @@ ru:
       author: "Автор"
       event: "Событие"
       datetime: "Состоится"
+      owner: "Организатор"
+    photo:
+      subject: "Новая фотография в %{title}"
+      title: "Новая фотография"
+      author: "Автор"
+      event: "Событие"
+      datetime: "Дата"
       owner: "Организатор"
 
   comments:
