@@ -37,3 +37,11 @@ module BbqSecond
     config.generators.system_tests = nil
   end
 end
+
+Bundler.require(*Rails.groups)
+
+if ["development", "test"].include? ENV["API_YANDEX_MAP"]
+  Dotenv::Railtie.load
+end
+
+API_YANDEX_MAP = ENV["API_YANDEX_MAP"]
