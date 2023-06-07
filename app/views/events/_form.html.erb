@@ -17,9 +17,14 @@
       <p><%= f.datetime_select :datetime, class: "form-control" %></p>
     </div>
 
-    <div class="form-group">
+    <div class="form-group mt-3">
       <%= f.label :description, t("attributes.event.description"), class: "form-label" %>
       <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="form-group mt-3">
+      <%= f.label :pincode, class: "form-label" %>
+      <%= f.text_field :pincode, class: "form-control" %>
     </div>
 
     <div class="actions buffer-bottom mt-3">

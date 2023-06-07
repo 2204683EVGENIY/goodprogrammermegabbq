@@ -28,15 +28,17 @@ ru:
         datetime: "Дата и время"
         description: "Описание"
         photo: "Фото"
+        pincode: "Пин-код доступа"
 
   controllers:
     events:
       created: "Вы создали новое мероприятие"
       updated: "Вы обновили мероприятие"
       destroyed: "Вы удалили мероприятие :("
+      wrong_pincode: "Неверный пин-код!"
 
     photos:
-      error: "Что-то не так с фоткой"
+      error: "Не Вы добавляли, не Вам и удалять :-)"
       created: "Вы добавили фотографию к событию"
       destroyed: "Вы удалили фотку"
       destroy_confirm: "Вы уверены что стоит удалить это фото?"
@@ -81,6 +83,7 @@ ru:
       owner: "Организатор:"
       guests: "Собираются идти:"
       subscribe: "Я пойду:"
+      need_pincode: "Доступ только по пин-коду"
 
   devise:
     passwords:
@@ -143,6 +146,7 @@ ru:
       event: "Событие"
       datetime: "Состоится"
       owner: "Организатор"
+
     subscription:
       title: "Новая подписка"
       name: "Имя"
@@ -151,6 +155,7 @@ ru:
       event: "Событие"
       datetime: "Состоится"
       owner: "Организатор"
+
     photo:
       subject: "Новая фотография в %{title}"
       title: "Новая фотография"
