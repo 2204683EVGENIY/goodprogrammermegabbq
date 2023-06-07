@@ -13,10 +13,10 @@ require "action_controller/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 # require "rails/test_unit/railtie"
-require 'action_mailer/railtie'
+require "action_mailer/railtie"
 
 # Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
+# you"ve limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module BbqSecond
@@ -33,7 +33,7 @@ module BbqSecond
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ru
 
-    # Don't generate system test files.
+    # Don"t generate system test files.
     config.generators.system_tests = nil
   end
 end
