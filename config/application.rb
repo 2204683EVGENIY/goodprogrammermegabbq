@@ -40,8 +40,8 @@ end
 
 Bundler.require(*Rails.groups)
 
-if ["development", "test"].include? ENV["API_YANDEX_MAP"]
+if ["development", "test"].include? ENV["RAILS_ENV"]
   Dotenv::Railtie.load
 end
 
-API_YANDEX_MAP = ENV["API_YANDEX_MAP"]
+HOSTNAME = ENV["HOSTNAME"]
