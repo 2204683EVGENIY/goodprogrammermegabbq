@@ -11,6 +11,15 @@ module ApplicationHelper
     content_tag "span", "", class: "fa fa-#{icon_class}"
   end
 
+  def flash_class(level)
+    case level
+      when "notice" then "alert-success"
+      when "success" then "alert-success"
+      when "error" then "alert-danger"
+      when "alert" then "alert-danger"
+    end
+  end
+
   def event_photo(event)
     photos = event.photos.persisted
 
