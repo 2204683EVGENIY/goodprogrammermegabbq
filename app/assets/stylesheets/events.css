@@ -63,5 +63,9 @@
 }
 
 .height {
-  max-height: 70px;
+  min-height: 100px;
+}
+
+.ml {
+  margin-left: 5px;
 }
