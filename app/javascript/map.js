@@ -1,10 +1,9 @@
 document.addEventListener("turbo:load", function (event) {
   const mapElement = document.getElementById("map");
 
+  if (!mapElement) return;
 
-  if (!mapElement || mapElement.hasAttribute("data-transformed")) {
-    return;
-  }
+  if (mapElement.hasAttribute("data-transformed")) return;
 
   ymaps.ready(init);
 
