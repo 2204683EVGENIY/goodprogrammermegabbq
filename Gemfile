@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.1"
 
+gem "image_processing", ">= 1.2"
+gem "aws-sdk-s3"
 gem "dotenv-rails", groups: [:development, :test]
 gem "carrierwave"
 gem "cssbundling-rails"

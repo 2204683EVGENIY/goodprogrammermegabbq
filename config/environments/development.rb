@@ -33,6 +33,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.active_storage.service = :yandex
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
