@@ -1,24 +1,24 @@
 test:
   service: Disk
-  root: <%= Rails.root.join("tmp/storage") %>
+  root: <%= Rails.root.join('tmp/storage') %>
 
 local:
   service: Disk
-  root: <%= Rails.root.join("storage") %>
+  root: <%= Rails.root.join('storage') %>
 
 yandex:
   service: S3
-  access_key_id: <%= ENV["ACCESS_KEY_ID"] %>
-  secret_access_key: <%= ENV["SECRET_ACCESS_KEY"] %>
+  access_key_id: <%= ENV['ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['SECRET_ACCESS_KEY'] %>
   region: ru-central1
   bucket: goodprogrammermegabbq
-  endpoint: "https://storage.yandexcloud.net"
+  endpoint: 'https://storage.yandexcloud.net'
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
 #   project: your_project
-#   credentials: <%%= Rails.root.join("path/to/gcs.keyfile") %>
+#   credentials: <%%= Rails.root.join('path/to/gcs.keyfile') %>
 #   bucket: your_own_bucket-<%%= Rails.env %>
 
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
