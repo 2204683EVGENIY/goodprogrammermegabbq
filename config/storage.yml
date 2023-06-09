@@ -12,7 +12,7 @@ yandex:
   secret_access_key: <%= ENV["SECRET_ACCESS_KEY"] %>
   region: ru-central3
   bucket: goodprogrammermegabbq
-  endpoint: 'https://storage.yandexcloud.net'
+  endpoint: "https://storage.yandexcloud.net"
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:

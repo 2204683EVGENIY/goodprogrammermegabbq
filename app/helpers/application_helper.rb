@@ -1,9 +1,29 @@
 module ApplicationHelper
   def user_avatar(user)
-    if user.avatar?
-      user.avatar.url
+    if user.avatar.attached?
+      user.avatar
     else
       asset_path("user.png")
+    end
+  end
+
+  def event_photo(event)
+    photos = event.photos.persisted
+
+    if photos.any?
+      url_for(photos.sample.photo)
+    else
+      asset_path("event.jpg")
+    end
+  end
+
+  def event_thumb(event)
+    photos = event.photos.persisted
+
+    if photos.any?
+      url_for(photos.sample.photo)
+    else
+      asset_path("event.jpg")
     end
   end
 
@@ -17,34 +37,6 @@ module ApplicationHelper
       when "success" then "alert-success"
       when "error" then "alert-danger"
       when "alert" then "alert-danger"
-    end
-  end
-
-  def event_photo(event)
-    photos = event.photos.persisted
-
-    if photos.any?
-      photos.sample.photo.url
-    else
-      asset_path("event.jpg")
-    end
-  end
-
-  def event_thumb(event)
-    photos = event.photos.persisted
-
-    if photos.any?
-      photos.sample.photo.thumb.url
-    else
-      asset_path("event_thumb.jpg")
-    end
-  end
-
-  def user_avatar_thumb(user)
-    if user.avatar.file.present?
-      user.avatar.thumb.url
-    else
-      asset_path("user.png")
     end
   end
 end

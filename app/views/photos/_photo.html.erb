@@ -1,5 +1,5 @@
 <div class="col-md-3 text-center mb-3 mt-3 psn-rltv ml">
-  <%= link_to image_tag(photo.photo.thumb.url, class: "img-fluid height rounded"), photo.photo.url, class: "col-sm-3", data: { toggle: "lightbox", gallery: "example-gallery" } %>
+  <%= link_to image_tag(photo.photo, class: "img-fluid height rounded"), photo.photo, class: "col-sm-3", data: { toggle: "lightbox", gallery: "example-gallery" } %>
   <%= button_to event_photo_path(photo.event, photo),
   method: :delete,
   data: { confirm: t("controllers.photos.destroy_confirm"), 

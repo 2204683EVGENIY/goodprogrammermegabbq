@@ -4,9 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.1"
 
 gem "image_processing", ">= 1.2"
+gem "activestorage-validator"
 gem "aws-sdk-s3"
 gem "dotenv-rails", groups: [:development, :test]
-gem "carrierwave"
 gem "cssbundling-rails"
 gem "devise"
 gem "devise-i18n"
@@ -14,7 +14,6 @@ gem "jsbundling-rails"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 gem "rails-i18n"
-gem "rmagick"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
