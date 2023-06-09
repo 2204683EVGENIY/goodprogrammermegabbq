@@ -17,16 +17,6 @@ module ApplicationHelper
     end
   end
 
-  def event_thumb(event)
-    photos = event.photos.persisted
-
-    if photos.any?
-      url_for(photos.sample.photo)
-    else
-      asset_path("event.jpg")
-    end
-  end
-
   def fa_icon(icon_class)
     content_tag "span", "", class: "fa fa-#{icon_class}"
   end
