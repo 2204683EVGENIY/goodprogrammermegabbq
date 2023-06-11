@@ -3,22 +3,22 @@
     <%= render partial: "partials/form_errors", locals: { model: @event } %>
 
     <div class="form-group mt-3">
-      <%= f.label :title, t("attributes.event.title"), class: "form-label" %>
+      <%= f.label :title, t("activerecord.attributes.event.title"), class: "form-label" %>
       <%= f.text_field :title, class: "form-control" %>
     </div>
 
     <div class="form-group mt-3">
-      <%= f.label :address, t("attributes.event.address"), class: "form-label" %>
+      <%= f.label :address, t("activerecord.attributes.event.address"), class: "form-label" %>
       <%= f.text_field :address, class: "form-control" %>
     </div>
 
     <div class="form-group mt-3">
-      <%= f.label :datetime, t("attributes.event.datetime"), class: "form-label" %>
+      <%= f.label :datetime, t("activerecord.attributes.event.datetime"), class: "form-label" %>
       <p><%= f.datetime_select :datetime, class: "form-control" %></p>
     </div>
 
     <div class="form-group mt-3">
-      <%= f.label :description, t("attributes.event.description"), class: "form-label" %>
+      <%= f.label :description, t("activerecord.attributes.event.description"), class: "form-label" %>
       <%= f.text_area :description, class: "form-control" %>
     </div>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= javascript_include_tag "https://api-maps.yandex.ru/2.1/?apikey=#{ENV["API_YANDEX_MAP"]}=ru_RU", "data-turbo-track": "reload", defer: true %>
+    <%= javascript_include_tag "https://api-maps.yandex.ru/2.1/?apikey=#{ENV["API_YANDEX_MAP"]}&lang=ru_RU", "data-turbo-track": "reload", defer: true %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
