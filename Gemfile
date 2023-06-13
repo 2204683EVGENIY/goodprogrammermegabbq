@@ -6,7 +6,6 @@ ruby "3.2.1"
 gem "image_processing", ">= 1.2"
 gem "activestorage-validator"
 gem "aws-sdk-s3"
-gem "dotenv-rails", groups: [:development, :test]
 gem "cssbundling-rails"
 gem "devise"
 gem "devise-i18n"
@@ -20,6 +19,7 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
+  gem "dotenv-rails"
   gem "letter_opener"
   gem "sqlite3", "~> 1.4"
   gem "web-console"
