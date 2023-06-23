@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "jhon.volgin@goodprogrammermegabbq.fun"
+  default from: ENV["MJ_SENDER_ADRESS"]
 
   layout "mailer"
 end
