@@ -36,4 +36,4 @@
 /storage/*
 !/storage/.keep
 
-/my_secret.yml
+.env
