@@ -4,7 +4,6 @@ class PhotosController < ApplicationController
 
   def create
     @new_photo = @event.photos.build(photo_params)
-
     @new_photo.user = current_user
 
     if @new_photo.save
@@ -29,23 +28,24 @@ class PhotosController < ApplicationController
   end
 
   private
-    def notify_photo(event, new_photo)
-      all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [new_photo.user.email])
 
-      all_emails.each do |mail|
-        EventMailer.photo(event, new_photo, mail).deliver_now
-      end
-    end
+  def notify_photo(event, new_photo)
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [new_photo.user.email])
 
-    def set_event
-      @event = Event.find(params[:event_id])
+    all_emails.each do |mail|
+      EventMailer.photo(event, new_photo, mail).deliver_now
     end
+  end
 
-    def set_photo
-      @photo = @event.photos.find(params[:id])
-    end
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
 
-    def photo_params
-      params.fetch(:photo, {}).permit(:photo)
-    end
+  def set_photo
+    @photo = @event.photos.find(params[:id])
+  end
+
+  def photo_params
+    params.fetch(:photo, {}).permit(:photo)
+  end
 end

@@ -11,8 +11,8 @@
       <% if current_user_can_edit?(comment) %>
         <%= button_to event_comment_path(comment.event, comment),
         method: :delete,
-        data: { confirm: t("subscriptions.subscription.destroy_confirm"), 
-        turbo_confirm: t("subscriptions.subscription.destroy_confirm") }, 
+        data: { confirm: t("comments.comment.destroy_confirm"), 
+        turbo_confirm: t("comments.comment.destroy_confirm") }, 
         class: "btn btn-outline-danger position-absolute top-50 start-100 translate-middle bi bi-x-circle-fill" do %>
         <% end %>
       <% end %>

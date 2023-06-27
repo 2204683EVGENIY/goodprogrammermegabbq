@@ -81,7 +81,7 @@ ru:
       edit: "Редактирование события"
       destroy_confirm: "Точно удалить событие, жалеть не будете?"
       owner: "Организатор:"
-      guests: "Собираются идти:"
+      guests: "Пойдут:"
       subscribe: "Я пойду:"
       need_pincode: "Доступ только по пин-коду"
 
@@ -127,10 +127,6 @@ ru:
     edit_profile: "Редактировать профиль"
     change_password: "Сменить пароль"
     or: "или"
-    
-  comments:
-    comment:
-    destroy_confirm: "Вы уверены, что хотите удалить этот комментарий?"
 
   subscriptions:
     created: "Вы подписаны на это событие"
@@ -141,14 +137,14 @@ ru:
 
   event_mailer:
     comment:
-      title: "Новый комментарий"
+      title: "Новый комментарий в"
       author: "Автор"
       event: "Событие"
       datetime: "Состоится"
       owner: "Организатор"
 
     subscription:
-      title: "Новая подписка"
+      title: "Новая подписка в"
       name: "Имя"
       email: "Email"
       author: "Автор"
@@ -157,8 +153,7 @@ ru:
       owner: "Организатор"
 
     photo:
-      subject: "Новая фотография в %{title}"
-      title: "Новая фотография"
+      title: "Новая фотография в"
       author: "Автор"
       event: "Событие"
       datetime: "Дата"

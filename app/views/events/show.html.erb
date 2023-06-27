@@ -61,6 +61,7 @@
         <p><%= render partial: "users/user", object: @event.user %></p>
     </div>
 
+  <% if @event.subscriptions.except(@new_subscription).any? %>
     <div class="event-subscriptions">
       <h4><%= t("events.event.guests") %></h4>
       <div>
@@ -70,16 +71,17 @@
         </p>
       </div>
     </div>
+  <% end %>
 
-
-      <div class="event-subscription-form">
-        <h4><%= t("events.event.subscribe") %></h4>
-        <div>
-          <%= render partial: "subscriptions/form", locals: {
-            subscription: @new_subscription || @event.subscriptions.build
-          } %>
-        </div>
+  <% unless is_subscriber? %>
+    <div class="event-subscription-form">
+      <h4><%= t("events.event.subscribe") %></h4>
+      <div>
+        <%= render partial: "subscriptions/form", locals: {
+          subscription: @new_subscription || @event.subscriptions.build
+        } %>
       </div>
-
+    </div>
+  <% end %>
   </div>
 </div>
