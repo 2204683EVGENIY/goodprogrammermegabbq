@@ -28,23 +28,24 @@ class CommentsController < ApplicationController
   end
 
   private
-    def notify_subscribers(event, new_comment)
-      all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [new_comment.user&.email])
 
-      all_emails.each do |mail|
-        EventMailer.comment(event, new_comment, mail).deliver_now
-      end
-    end
+  def notify_subscribers(event, new_comment)
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [new_comment.user&.email])
 
-    def set_event
-      @event = Event.find(params[:event_id])
+    all_emails.each do |mail|
+      EventMailer.comment(event, new_comment, mail).deliver_now
     end
+  end
 
-    def set_comment
-      @comment = @event.comments.find(params[:id])
-    end
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
 
-    def comment_params
-      params.require(:comment).permit(:body, :user_name)
-    end
+  def set_comment
+    @comment = @event.comments.find(params[:id])
+  end
+
+  def comment_params
+    params.require(:comment).permit(:body, :user_name)
+  end
 end
