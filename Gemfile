@@ -28,6 +28,15 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
+group :development do
+  gem "capistrano", "~> 3.0"
+  gem "capistrano-asdf"
+  gem "capistrano-rails"
+  gem "capistrano-passenger"
+  gem "capistrano-bundler"
+  gem "capistrano-yarn"
+end
+
 group :production do
   gem "pg"
 end
