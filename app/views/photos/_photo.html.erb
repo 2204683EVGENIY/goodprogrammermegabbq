@@ -1,11 +1,13 @@
 <div class="col-md-3 text-center mb-3 mt-3 psn-rltv ml">
   <%= link_to image_tag(photo.photo, class: "img-fluid height rounded"), photo.photo, class: "col-sm-3", data: { toggle: "lightbox", gallery: "example-gallery" } %>
-  <%= button_to event_photo_path(photo.event, photo),
-  method: :delete,
-  data: { confirm: t("controllers.photos.destroy_confirm"), 
-  turbo_confirm: t("controllers.photos.destroy_confirm") },
-  class: "btn position-absolute top-0 start-50 translate-middle
-  bi bi-x-circle-fill text-danger" do %>
+  <% if current_user_can_edit?(photo) %>
+    <%= button_to event_photo_path(photo.event, photo),
+    method: :delete,
+    data: { confirm: t("controllers.photos.destroy_confirm"), 
+    turbo_confirm: t("controllers.photos.destroy_confirm") },
+    class: "btn position-absolute top-0 start-50 translate-middle
+    bi bi-x-circle-fill text-danger" do %>
+    <% end %>
   <% end %>
 	<%= render partial: "users/user", object: photo.user %>
 </div>
