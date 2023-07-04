@@ -12,6 +12,7 @@ gem "aws-sdk-s3"
 gem "cssbundling-rails"
 gem "devise"
 gem "devise-i18n"
+gem "pundit"
 gem "jsbundling-rails"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
@@ -23,8 +24,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
   gem "letter_opener"
+  gem "rspec-rails"
   gem "sqlite3", "~> 1.4"
-  gem "web-console"
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
@@ -35,6 +36,7 @@ group :development do
   gem "capistrano-passenger"
   gem "capistrano-bundler"
   gem "capistrano-yarn"
+  gem "web-console"
 end
 
 group :production do

@@ -32,9 +32,11 @@
 /node_modules
 
 /db/development.sqlite3
+/db/test.sqlite3
 /bbq_second_development
 
 /storage/*
 !/storage/.keep
 
 .env
+.rspec
