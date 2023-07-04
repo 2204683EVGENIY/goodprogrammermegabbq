@@ -14,7 +14,7 @@
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <%= link_to t("app.name"), root_path, class: "display-4" %>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
           <% if user_signed_in? %>
             <%= button_to t("events.event.new"), new_event_path, method: :get, class: "btn btn-success" %>
             <%= button_to t("button.profile"), current_user, method: :get, class: "btn btn-outline-primary", type: "button" %>

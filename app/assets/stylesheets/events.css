@@ -54,7 +54,7 @@
 }
 
 .wdh-fteen-prc {
-  width: 40vh;
+  flex-grow: 3
 }
 
 .sz-small {
