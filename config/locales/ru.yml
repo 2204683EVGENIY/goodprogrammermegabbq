@@ -128,6 +128,9 @@ ru:
     change_password: "Сменить пароль"
     or: "или"
 
+  pundit:
+    not_authorized: "У Вас нет здесь власти :)"
+
   subscriptions:
     created: "Вы подписаны на это событие"
     destroyed: "Участник отписан"

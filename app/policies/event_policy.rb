@@ -10,10 +10,17 @@ class EventPolicy < ApplicationPolicy
   def destroy?
     user_is_owner?(record)
   end
-  class Scope < Scope
-    # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+
+  def show?
+    return true if record.pincode.blank?
+    return true if user.present? && record.user == user
+
+    if params[:pincode].present? && record.pincode_valid?(params[:pincode])
+      cookies.permanent["event_#{record.id}_pincode"] = params[:pincode]
+    end
+
+    return false unless record.pincode_valid?(cookies.permanent["event_#{record.id}_pincode"])
+
+    true
   end
 end
