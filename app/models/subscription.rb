@@ -22,13 +22,17 @@ class Subscription < ApplicationRecord
 
   def user_email
     if user.present?
-      user&.email || super
+      user&.email
+    else
+      super
     end
   end
 
   def user_name
     if user.present?
-      user&.name || super
+      user&.name
+    else
+      super
     end
   end
 
