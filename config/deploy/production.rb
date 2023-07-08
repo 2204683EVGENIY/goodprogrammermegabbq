@@ -10,7 +10,7 @@
 server "79.133.182.186", user: "deploy", roles: %w{app db web resque_worker}
 
 set :resque_environment_task, true
-set :workers, { "#{fetch(:application)}*" => 1 }
+set :workers, { "goodprogrammermegabbq_*" => 1 }
 
 # role-based syntax
 # ==================
