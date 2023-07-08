@@ -43,7 +43,6 @@ require "capistrano/bundler"
 require "capistrano-resque"
 
 set :asdf_type, :user
-set :rbenv_prefix, "env RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :asdf_ruby, "3.2.1"
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
