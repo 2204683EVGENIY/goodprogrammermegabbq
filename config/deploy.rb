@@ -14,6 +14,8 @@ set :branch, "main"
 
 set :deploy_to, "/home/deploy/www"
 
+after "deploy:restart", "resque:restart"
+
 set :passenger_restart_with_touch, true
 
 # Default value for :format is :airbrussh.

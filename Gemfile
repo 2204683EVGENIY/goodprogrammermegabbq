@@ -12,6 +12,7 @@ gem "aws-sdk-s3"
 gem "cssbundling-rails"
 gem "devise"
 gem "devise-i18n"
+gem "resque"
 gem "pundit"
 gem "jsbundling-rails"
 gem "puma", "~> 5.0"
@@ -36,6 +37,7 @@ group :development do
   gem "capistrano-passenger"
   gem "capistrano-bundler"
   gem "capistrano-yarn"
+  gem "capistrano-resque", require: false
   gem "web-console"
 end
 

@@ -40,6 +40,7 @@ require "capistrano/rails"
 require "capistrano/passenger"
 require "capistrano/asdf"
 require "capistrano/bundler"
+require "capistrano-resque"
 
 set :asdf_type, :user
 set :asdf_ruby, "3.2.1"

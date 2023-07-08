@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @new_comment.user = current_user
 
     if @new_comment.save
-      notify_subscribers(@new_comment)
+      NotifySubscribersJob.perform_later(@new_comment)
 
       redirect_to @event, notice: I18n.t("controllers.comments.created")
     else
@@ -28,14 +28,6 @@ class CommentsController < ApplicationController
   end
 
   private
-
-  def notify_subscribers(new_comment)
-    all_emails = (new_comment.event.subscriptions.map(&:user_email) + [new_comment.event.user.email] - [new_comment.user&.email])
-
-    all_emails.each do |mail|
-      EventMailer.comment(new_comment, mail).deliver_now
-    end
-  end
 
   def set_event
     @event = Event.find(params[:event_id])
