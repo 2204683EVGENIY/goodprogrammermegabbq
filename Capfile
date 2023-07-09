@@ -42,6 +42,7 @@ require "capistrano/asdf"
 require "capistrano/bundler"
 require "capistrano-resque"
 
+set :"$HOME/.asdf"
 set :asdf_type, :user
 set :asdf_ruby, "3.2.1"
 
