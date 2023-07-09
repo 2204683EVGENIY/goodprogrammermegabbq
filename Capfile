@@ -4,8 +4,6 @@ require "capistrano/setup"
 # Include default deployment tasks
 require "capistrano/deploy"
 
-require "capistrano/asdf"
-
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"
@@ -42,9 +40,7 @@ require "capistrano/asdf"
 require "capistrano/bundler"
 require "capistrano-resque"
 
-set :asdf_custom_path, "/home/deploy/.asdf"
-set :asdf_type, :user
-set :asdf_ruby, "3.2.1"
+set :asdf_custom_path, "/home/deploy/.asdf &"
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
