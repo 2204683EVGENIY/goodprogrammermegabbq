@@ -32,7 +32,8 @@ end
 
 group :development do
   gem "capistrano", "~> 3.0"
-  gem "capistrano-asdf"
+  gem "capistrano-rbenv"
+  gem 'capistrano-nvm', require: false
   gem "capistrano-rails"
   gem "capistrano-passenger"
   gem "capistrano-bundler"

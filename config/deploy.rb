@@ -2,7 +2,7 @@
 lock "~> 3.17.3"
 
 set :application, "bbq_second"
-set :repo_url, "git@github.com:2204683EVGENIY/bbq_second.git"
+set :repo_url, "git@github.com:2204683EVGENIY/goodprogrammermegabbq.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -35,7 +35,7 @@ append :linked_files, "config/database.yml", "config/master.key"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
 
 # Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, { path: "/home/deploy/.nvm/versions/node/v16.9.0/bin/:$PATH" }
 
 # Default value for local_user is ENV["USER"]
 # set :local_user, -> { `git config user.name`.chomp }
