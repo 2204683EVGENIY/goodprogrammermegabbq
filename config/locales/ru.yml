@@ -140,6 +140,7 @@ ru:
 
   event_mailer:
     comment:
+      subject: "Новый комментарий в %{title}"
       title: "Новый комментарий"
       author: "Автор"
       event: "Событие"
@@ -147,6 +148,7 @@ ru:
       owner: "Организатор"
 
     subscription:
+      subject: 'Новая подписка на %{title}'
       title: "Новая подписка"
       name: "Имя"
       email: "Email"
@@ -156,6 +158,7 @@ ru:
       owner: "Организатор"
 
     photo:
+      subject: "Новая фотография в %{title}"
       title: "Новая фотография"
       author: "Автор"
       event: "Событие"
