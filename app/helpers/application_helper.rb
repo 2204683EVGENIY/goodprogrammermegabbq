@@ -2,6 +2,8 @@ module ApplicationHelper
   def user_avatar(user)
     if user.avatar.attached?
       user.avatar
+    elsif user.oauth_avatar.present?
+      user.oauth_avatar
     else
       asset_path("user.png")
     end

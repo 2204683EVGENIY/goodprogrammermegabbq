@@ -1,6 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.hosts << "lvh.me"
   config.active_job.queue_adapter = :async
   config.active_job.queue_name_prefix = "goodprogrammermegabbq_#{Rails.env}"
   # Settings specified here will take precedence over those in config/application.rb.

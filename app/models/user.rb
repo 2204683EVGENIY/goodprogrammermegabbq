@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: %i[ github vkontakte ]
 
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -17,6 +18,32 @@ class User < ApplicationRecord
   before_validation :downcase_email
 
   after_commit :link_subscriptions, on: :create
+
+  def self.find_for_oauth(access_token, provider)
+    email = access_token.info.email
+    name = access_token.info.name
+
+    oauth_avatar = if provider == "Vkontakte"
+                     access_token.extra.raw_info.photo_400_orig
+                   else
+                     access_token.info.image
+                   end
+
+    user = User.find_or_initialize_by(email: email.downcase)
+
+    return user if user.persisted?
+
+    user.assign_attributes(
+      email: email,
+      name: name,
+      oauth_avatar: oauth_avatar
+      password: Devise.friendly_token.first(16),
+    )
+
+    user.save
+
+    user
+  end
 
   private
 

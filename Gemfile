@@ -4,6 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.1"
 
 gem "dotenv-rails"
+gem "omniauth"
+gem "omniauth-github"
+gem "omniauth-vkontakte"
+gem "omniauth-rails_csrf_protection"
 gem "image_processing", ">= 1.2"
 gem "mailjet"
 gem "ruby-vips"
@@ -33,7 +37,7 @@ end
 group :development do
   gem "capistrano", "~> 3.0"
   gem "capistrano-rbenv"
-  gem 'capistrano-nvm', require: false
+  gem "capistrano-nvm", require: false
   gem "capistrano-rails"
   gem "capistrano-passenger"
   gem "capistrano-bundler"

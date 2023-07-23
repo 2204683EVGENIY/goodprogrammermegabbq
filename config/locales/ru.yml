@@ -85,7 +85,10 @@ ru:
       subscribe: "Я пойду:"
       need_pincode: "Доступ только по пин-коду"
 
-  devise:
+  devise: 
+    omniauth_callbacks:
+      failure: "Чтот пошло не по плану :-("
+      success: "О! Заходи дорогой :-)"
     passwords:
       new: "Забыли пароль?"
       live: "Старый пароль"
@@ -106,6 +109,7 @@ ru:
     new: "Вход"
 
   button:
+    sign_in_with: "Войти с помощью"
     password_reset: "Отправить инструкцию по сбросу пароля"
     change_password: "Сменить пароль"
     update: "Обновить"
