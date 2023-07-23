@@ -36,8 +36,8 @@ class User < ApplicationRecord
     user.assign_attributes(
       email: email,
       name: name,
-      oauth_avatar: oauth_avatar
-      password: Devise.friendly_token.first(16),
+      oauth_avatar: oauth_avatar,
+      password: Devise.friendly_token.first(16)
     )
 
     user.save
