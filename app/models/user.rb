@@ -29,7 +29,7 @@ class User < ApplicationRecord
                      access_token.info.image
                    end
 
-    user = User.find_or_initialize_by(email: email.downcase)
+    user = User.find_or_initialize_by(email: email&.downcase)
 
     return user if user.persisted?
 
