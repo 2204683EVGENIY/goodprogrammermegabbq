@@ -24,7 +24,6 @@ In this application I have used:
 7. Resque for background jobs
 8. Capistrano to deploy
 
-
 The gem `dotenv-rails` is already included in the gem file, so all you have to do is create a file `.env` in the project root with the keys necessary for the application to work, and you need to get keys: for [Yandex map](https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key), [S3 basket](https://cloud.yandex.ru/), [Mailjet](https://www.mailjet.com/), OmniAuth - [here](https://github.com/settings/developers) and [here](https://dev.vk.com/)
 
 Example file `.env`
