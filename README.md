@@ -16,15 +16,16 @@ app language: russian
 
 In this application I have used:
 1. Authentication with gem pundit
-2. ActiveStorage and bucket S3 for uploading photo
-3. Subscribers receive emails with the help of Mailjet
-4. Locations in events are displayed on Yandex maps
-5. Styles from bootstrap
-6. Resque for background jobs
-7. Capistrano to deploy
+2. Gem omniauth for authentication through GitHub and Vkontakte
+3. ActiveStorage and bucket S3 for uploading photo
+4. Subscribers receive emails with the help of Mailjet
+5. Locations in events are displayed on Yandex maps
+6. Styles from bootstrap
+7. Resque for background jobs
+8. Capistrano to deploy
 
 
-The gem `dotenv` is already included in the gem file, so all you have to do is create a file `.env` in the project root with the keys necessary for the application to work, and you need to get keys: for [Yandex map](https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key), [S3 basket](https://cloud.yandex.ru/), [Mailjet](https://www.mailjet.com/)
+The gem `dotenv-rails` is already included in the gem file, so all you have to do is create a file `.env` in the project root with the keys necessary for the application to work, and you need to get keys: for [Yandex map](https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key), [S3 basket](https://cloud.yandex.ru/), [Mailjet](https://www.mailjet.com/), OmniAuth - [here](https://github.com/settings/developers) and [here](https://dev.vk.com/)
 
 Example file `.env`
 
